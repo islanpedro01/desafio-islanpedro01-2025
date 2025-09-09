@@ -7,7 +7,6 @@ class AbrigoAnimais {
   validaAnimal(listaNomesAnimais){
     const ErroAnimal = new Error("Animal inválido")
     let nomesAnimais = listaNomesAnimais.split(",")
-    let duplicatas = []
     
     // for (let i = 0; i >= nomesAnimais.length(); i++){
     //   if (this.nomes.includes(nomesAnimais[i])){
@@ -19,7 +18,7 @@ class AbrigoAnimais {
       throw ErroAnimal;}
     });
 
-    duplicatas = nomesAnimais.filter((animal, index) => nomesAnimais.indexOf(animal) !== index);
+    let duplicatas = nomesAnimais.filter((animal, index) => nomesAnimais.indexOf(animal) !== index);
     if (duplicatas.length() > 0) throw ErroAnimal
 
     }
