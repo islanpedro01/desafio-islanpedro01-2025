@@ -11,12 +11,27 @@ class AbrigoAnimais {
     nomesAnimais.map((animal) => {
       if (!this.nomes.includes(animal)) throw ErroAnimal
     });
-    
+
     let duplicatas = nomesAnimais.filter((animal, index) => nomesAnimais.indexOf(animal) !== index);
     if (duplicatas.length() > 0) throw ErroAnimal
 
     return listaNomesAnimais
   
+    }
+
+    validaBrinquedo(listaBrinquedos){
+    const ErroBrinquedo = new Error("Brinquedo inválido")
+    let nomesBrinquedos = listaBrinquedos.split(",")
+
+    nomesBrinquedos.map((brinquedo) => {
+      if (!this.brinquedos.includes(brinquedo)) throw ErroBrinquedo
+    });
+
+    let duplicatas = nomesBrinquedos.filter((brinquedo, index) => nomesBrinquedos.indexOf(brinquedo) !== index);
+    if (duplicatas.length() > 0) throw ErroBrinquedo
+
+    return listaBrinquedos
+
     }
 
 
