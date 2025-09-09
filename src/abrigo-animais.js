@@ -7,17 +7,16 @@ class AbrigoAnimais {
   validaAnimal(listaNomesAnimais){
     const ErroAnimal = new Error("Animal inválido")
     let nomesAnimais = listaNomesAnimais.split(",")
-    
-    // for (let i = 0; i >= nomesAnimais.length(); i++){
-    //   if (this.nomes.includes(nomesAnimais[i])){
-    //     throw ErroAnimal;
-    //   }
-
+  
     nomesAnimais.map((animal) => {
       if (!this.nomes.includes(animal)) throw ErroAnimal
     });
+    
     let duplicatas = nomesAnimais.filter((animal, index) => nomesAnimais.indexOf(animal) !== index);
     if (duplicatas.length() > 0) throw ErroAnimal
+
+    return listaNomesAnimais
+  
     }
 
 
