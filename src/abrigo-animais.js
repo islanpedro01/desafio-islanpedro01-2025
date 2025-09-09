@@ -13,14 +13,11 @@ class AbrigoAnimais {
     //     throw ErroAnimal;
     //   }
 
-  nomesAnimais.map((animal) => {
-      if (!this.nomes.includes(animal)) {
-      throw ErroAnimal;}
+    nomesAnimais.map((animal) => {
+      if (!this.nomes.includes(animal)) throw ErroAnimal
     });
-
     let duplicatas = nomesAnimais.filter((animal, index) => nomesAnimais.indexOf(animal) !== index);
     if (duplicatas.length() > 0) throw ErroAnimal
-
     }
 
 
